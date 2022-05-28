@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeAll;
 public class TestBaseForMultitest {
     @BeforeAll
     static void setUp() {
-        System.setProperty("localOrRemote", "local");
+ //       System.setProperty("localOrRemote", "local");
         RemoteOrLocalConfig config = ConfigFactory
                 .create(RemoteOrLocalConfig.class,System.getProperties());
         Configuration.browserSize = config.browserSize();
