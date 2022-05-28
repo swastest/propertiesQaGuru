@@ -48,6 +48,16 @@ tasks.withType(Test) {
     // добавила эту строчку, чтобы можно было менять конфиги, передавая на входе, это типа швейцара на входе)))
     useJUnitPlatform()
 
+    if (System.getProperty("threads") != null) {
+        systemProperties += [
+                'junit.jupiter.execution.parallel.enabled'                 : true,
+                'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
+                'junit.jupiter.execution.parallel.mode.classes.default'    : 'concurrent',
+                'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
+                'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads").toInteger()
+        ]
+    }
+
     // чтобы логи были симпатичнее ТОЛЬКО В КОНСОЛЕ у нас (в алюре не используется, там свое)
     testLogging {
         lifecycle {

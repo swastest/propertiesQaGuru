@@ -8,4 +8,5 @@ public interface Local extends Config {
     String baseUrl();
     String browser();
     String browserVersion();
+    String remote();
 }
