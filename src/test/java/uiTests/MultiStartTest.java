@@ -6,6 +6,7 @@ import configInterf.RemoteOrLocalConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -15,6 +16,7 @@ import static io.qameta.allure.Allure.step;
 
 
 public class MultiStartTest extends TestBaseForMultitest{
+    @Tag("multi")
     @Test
     @DisplayName("Проверка стоимости на главной странице")
     void generatedTest() {

@@ -45,7 +45,6 @@ tasks.withType(JavaCompile) {
 
 tasks.withType(Test) {
     systemProperties(System.getProperties())
-    // добавила эту строчку, чтобы можно было менять конфиги, передавая на входе, это типа швейцара на входе)))
     useJUnitPlatform()
 
     if (System.getProperty("threads") != null) {
@@ -67,13 +66,13 @@ tasks.withType(Test) {
     }
 }
 
-//// Работа с тегами
-//task demoQaForm(type: Test) {
-//    useJUnitPlatform {
-//        includeTags "demoQaForm"
-////       excludeTags "simple"  - искючение выполнение теста, который имеет тег simple, например
-//    }
-//}
+//Работа с тегами
+task multi(type: Test) {
+    useJUnitPlatform {
+        includeTags "multi"
+//       excludeTags "simple"  - искючение выполнение теста, который имеет тег simple, например
+    }
+}
 
 
 
